@@ -1,0 +1,26 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    height: auto;
+    margin: 5px;
+}
+.img-item {
+    width: 5rem;
+    height: auto;
+    
+}
+
+.item-increment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.counterText h1{
+    text-align: center;
+}

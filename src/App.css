@@ -1,0 +1,8 @@
+.isaacCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.isaacCard img {
+    height: 15rem;
+}
