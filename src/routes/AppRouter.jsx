@@ -6,7 +6,7 @@ export const AppRouter = () => {
   return (
     <Routes>
         <Route path="*" element={<Character />}/>
-        <Route path="game" element={<App />}/>
+        <Route path="game/:isaac" element={<App />}/>
     </Routes>
   )
 }

@@ -1,14 +1,20 @@
 import { useContext } from 'react';
 import { Item, Dice } from './components'
 import { CharacterContext } from './context/CharacterContexts';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './App.css'
+import { getCharactersByName } from './helpers/getCharactersByName';
 
 
 
 function App() {
   
-  const { Character } = useContext(CharacterContext);
+  const { isaac } = useParams();
+  const Character = getCharactersByName(isaac);
+
+  const {name, objecturl} = Character[0];
+
+
 
   const navigate = useNavigate();
 
@@ -19,14 +25,14 @@ function App() {
 
   return (
     <div className="app">
-      <h1 className='text-white text-center bg-dark py-1' onClick={navigateHome}>{Character.name}</h1>
+      <h1 className='text-white text-center bg-dark py-1' onClick={navigateHome}>{name}</h1>
       
       <div className="container mt-4 h-10">
 
           <div className='row row-cols-2 justify-content-center'>
             <div className="col">
               <div className="isaacCard">
-                <img alt='not found' src={Character.tresure} className='image-fluid' style={{maxWidth: 300, height: 'auto'}}/>
+                <img alt='not found' src={objecturl} className='image-fluid' style={{maxWidth: 300, height: 'auto'}}/>
               </div>
             </div>
 
