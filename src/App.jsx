@@ -32,7 +32,7 @@ function App() {
           <div className='row row-cols-2 justify-content-center'>
             <div className="col">
               <div className="isaacCard">
-                <img alt='not found' src={objecturl} className='image-fluid' style={{maxWidth: 300, height: 'auto'}}/>
+                <img alt='not found' src={objecturl} className='image-fluid rounded border border-3 border-dark' style={{maxWidth: 300, height: 'auto'}}/>
               </div>
             </div>
 
@@ -60,6 +60,7 @@ function App() {
             <Item 
               imageUrl='https://cdn.discordapp.com/attachments/1062288717097746442/1064033702688083968/coin.png'
               counterDefault={3}
+              item="coin"
               />  
           </div> 
 
