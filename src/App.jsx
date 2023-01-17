@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Item, Dado } from './components'
+import { Item, Dice } from './components'
 import { CharacterContext } from './context/CharacterContexts';
 import { useNavigate } from 'react-router-dom';
 import './App.css'
@@ -33,8 +33,8 @@ function App() {
           </div>
       </div>  
 
-      <div className='container mt-4'>
-        <div className="row row-cols-2 justify-content-center">
+      <div className='container mt-4 d-flex justify-content-center'>
+        <div className="row row-cols-2 justify-content-center" style={{maxWidth: 600}}>
           
           <div className='col'>
             <Item 
@@ -61,7 +61,7 @@ function App() {
       </div>
 
       <div className="container">
-        <Dado />
+        <Dice />
       </div>
     </div>
   )
