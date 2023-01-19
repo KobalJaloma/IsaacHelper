@@ -1,5 +1,5 @@
-import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { ShuffleCard } from "../components";
 import { isaacs } from '../data/characters';
 
 
@@ -17,6 +17,9 @@ export const Character = () => {
 
     <div className="container">
         <h1 className="text-center bg-dark text-white py-1"> Escoge tu Isaac</h1>
+
+        <ShuffleCard />
+
         <div className="row">
 
         <div className="overflow-x-hidden">

@@ -1,6 +1,4 @@
-import { useContext } from 'react';
 import { Item, Dice } from './components'
-import { CharacterContext } from './context/CharacterContexts';
 import { useNavigate, useParams } from 'react-router-dom';
 import './App.css'
 import { getCharactersByName } from './helpers/getCharactersByName';
