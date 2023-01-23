@@ -1,11 +1,29 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { useCounter } from '../hooks'
 
 
 
-export const Item = React.memo(({imageUrl, counterDefault = 2, item='item'}) => {
+export const Item = React.memo(({imageUrl, counterDefault = 2, item='item', tresure = false}) => {
     
     const { counter, increment, decrement } = useCounter(counterDefault);
+
+    const showTresure = () => {
+        if(tresure && counter >= 10) {
+            return (
+                <button 
+                className='btn btn-sm bg-warning mt-2'
+                style={{background: 'white'}}
+                onClick={() => decrement(10) }
+                >
+                Treasure  
+                </button>
+            )
+        }
+        else return(<></>)
+    }
+    
 
     return (
         <div 
@@ -14,7 +32,14 @@ export const Item = React.memo(({imageUrl, counterDefault = 2, item='item'}) => 
             <div onClick={() => increment(1)}>
                 <img src={imageUrl} style={{width: "5rem"}}/>
                 
-                <div className={`text-center ${(counter >= 10) ? 'text-warning' : 'text-white'}`} >
+                <div 
+                    className={`text-center 
+                        ${item === 'coin' 
+                        ? counter >= 10 
+                            ? 'text-warning' 
+                            : 'text-white' 
+                        : 'text-white'}`} 
+                >
                     <h1>{counter}</h1>
                 </div>
 
@@ -27,6 +52,9 @@ export const Item = React.memo(({imageUrl, counterDefault = 2, item='item'}) => 
             >
             Decrement  
             </button>
+            {
+                showTresure()
+            }
         </div>
     
     )

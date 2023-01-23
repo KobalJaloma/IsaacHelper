@@ -1,7 +1,7 @@
 import { Item, Dice } from './components'
 import { useNavigate, useParams } from 'react-router-dom';
-import './App.css'
 import { getCharactersByName } from './helpers/getCharactersByName';
+import './App.css'
 
 
 
@@ -59,6 +59,7 @@ function App() {
               imageUrl='https://cdn.discordapp.com/attachments/1062288717097746442/1064033702688083968/coin.png'
               counterDefault={3}
               item="coin"
+              tresure = {true}
               />  
           </div> 
 
